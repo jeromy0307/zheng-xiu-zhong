@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <title>Myhouse System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="/04008264d259fd65310095bdd8632695.jpg">
+  <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.js"></script>
+</head>
+<body>
+  <style>
+  ::selection {
+    color: #fff;
+    background: #040114;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    background: url(/images/animal-1300253.svg) center center fixed no-repeat;
+    background-size: cover;
+    background-color: #000;
+  }
+  #error-page {
+    min-height: 768px;
+  }
+  .message h1 {
+    margin: 0 0.2em 0 0;
+    color: #fff;
+    font-size: 8.5em;
+    font-weight: normal;
+  }
+  .message h2 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+  .message p {
+    color: #fff;
+  }
+  .home {
+    color: #fff;
+  }
+  a.home:hover {
+    text-decoration: none;
+  }
+  span#js{
+    background-color:#8080806b;
+  }
+  /* screen */
+  /*.message {
+    text-align: center;
+    position: absolute;
+    width:100%;
+    top: 35%;
+    /*margin-left: -175px;*/
+/*  }
+  .footer {
+  text-align: center;
+  position: absolute;
+  bottom: 10%;
+  width:100%;
+  
+  color: #fff;
+  font-size: 0.75em;*/
+  /*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+	@media screen and (max-width: 380px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 28%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 12.5%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 441px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 30%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 15%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 520px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 32%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 17%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 736px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 36%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 18%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 33%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 16%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 920px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 30%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 17%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 1080px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 28%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 18%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 1280px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 24%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 16%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 1680px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 20%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 14%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 2060px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 18%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 12%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+	@media screen and (max-width: 4090px) {
+		.message {
+		text-align: center;
+		position: absolute;
+		width:100%;
+		top: 16%;
+		/*margin-left: -175px;*/
+		}
+
+		.footer {
+		text-align: center;
+		position: absolute;
+		bottom: 10%;
+		width:100%;
+
+		color: #fff;
+		font-size: 0.75em;
+		/*https://blog.csdn.net/zhanh1218/article/details/40455021*/
+		}
+	}
+}
+}
+  </style>
+  <script language="JavaScript">
+  function ShowTime(){
+  　var NowDate=new Date();
+  　var a=NowDate.getFullYear();
+  　var b=NowDate.getMonth()+1;
+  　var c=NowDate.getDate();
+  　var h=NowDate.getHours();
+  　var m=NowDate.getMinutes();
+  　var s=NowDate.getSeconds();
+  　if(m<0) {m='0'+m};
+  　document.getElementById('showbox').innerHTML = a+'/'+b+'/'+c+'&nbsp;&nbsp;'+h+'時'+m+'分';
+  　setTimeout('ShowTime()',1000);
+  }
+  </script>
+  
+  <body onload="ShowTime()" style="">
+  <div id="showbox"></div>
+  <div id="error-page">
+      <section class="message">
+        <h1>503</h1>
+        <!--<h2>網站系統錯誤！</h2>-->
+        <p><span id="js">
+          網站伺服器維護中，造成您的不便還請見諒！<br>（頁面會自動恢復，我們會盡快使網站系統正常顯示，請您耐心等待）</span><!--網站調試中，造成您的不便還請見諒！本網站伺服器保養中，造成您的不便還請見諒！本網站頁面整合中我們將於30分鐘後重新開放頁面，--><br>
+        <p>
+        <div id="time" style="color: #fff;"></div>
+		<script> 
+        document.write("<s"+"cript type='text/javascript' src='/script/timer.js?"+Math.random()+"'></scr"+"ipt>"); 
+        </script>
+        <div id="time2" style="color: #fff;display:none;"></div>
+		<script>
+		/* 開放倒計時 */
+		'use-strict'; 
+		const n = document.querySelector('#time2');
+
+		// a timer function
+		let r = setInterval(timers, 1000);
+		function timers() {
+			const dat = new Date;
+			var y=(9999999900000-dat.getTime())/60000;
+			var tempt=y%1;
+			if ( tempt != 0)
+				{ y= (y-tempt)+1;}
+			/*if ( y < 0)
+				{ y=0;}*/
+			if (y<1)
+			{
+				let messages = "<br>"+"<span style='background-color:#8080806b;color:red;'>"+'網站即將開啟，請稍後！'+"<br>"+"<small style='color:white;'>"+'（網站會自動回復，無需重複重整頁面！）'+"<small>"+"</span>" ;
+				n.innerHTML = messages;
+			}
+			else if ( y > 60)
+			{
+				var z=y/60;
+				var tempr=z%1;
+				if ( tempr != 0)
+				{ z= z-tempr;}
+				y=y-(z*60);
+				var a=z/24;
+				var tempr=a%1;
+				if ( tempr != 0)
+				{ a= a-tempr;}
+				z=z-(a*24);
+				let messages = "<br>"+"<span style='background-color:#8080806b;' >"+'網站將於 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+a+"</span>"+"<span style='background-color:#8080806b;' >"+' 天 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+z+"</span>"+"<span style='background-color:#8080806b;' >"+' 小時 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+y+"</span>"+"<span style='background-color:#8080806b;' >"+' 分鐘後開放！'+"</span>" ;
+				n.innerHTML = messages;
+
+			}
+			else if ( y > 60)
+				{
+					var z=y/60;
+					var tempr=z%1;
+					if ( tempr != 0)
+					{ z= z-tempr;}
+					y=y-(z*60);
+					var a=z/24;
+					var tempr=a%1;
+					if ( tempr != 0)
+					{ a= a-tempr;}
+					z=z-(a*24);
+					let messages = "<br>"+"<span style='background-color:#8080806b;' >"+'網站將於 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+a+"</span>"+"<span style='background-color:#8080806b;' >"+' 天 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+z+"</span>"+"<span style='background-color:#8080806b;' >"+' 小時 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+y+"</span>"+"<span style='background-color:#8080806b;' >"+' 分鐘後開放！'+"</span>" ;
+					n.innerHTML = messages;
+
+				}
+			else
+			{
+				let messages = "<br>"+"<span style='background-color:#8080806b;' >"+'網站將於 '+"</span>"+"<span style='background-color:#8080806b;color:red;'>"+y+"</span>"+"<span style='background-color:#8080806b;' >"+' 分鐘後開放！'+"</span>" ;
+				n.innerHTML = messages;
+			}
+		}
+
+		// add "0" infront of single digits to make timer prettier.
+		function formate(r) {
+		return r;
+		}
+
+		/* 開放倒計時end */
+	      </script>
+		<!--<script> 
+        document.write("<s"+"cript type='text/javascript' src='/script/timer3.js?"+Math.random()+"'></scr"+"ipt>"); 
+        </script>-->
+        <p>
+          <small><!--<span id="js">公告時間：2022/06/21&nbsp;&nbsp;00：00</span>--></small>
+        </p>
+      </section>
+      <section class="footer" style="text-align:center;color: #fff;font-size: 0.75em;">
+				<pre style="font-family: 'Roboto', sans-serif;font-weight:normal;font-size: 0.95em;">Taichung Municipal Taichung First Senior High School Class 312</pre>
+				<a style="color:white;" href="https://myhouse.tctc.tk/anquan/dengjichaxun/tcfsh8312.tk/" target="_blank">Myhouse System 內部登記字號 C0001-增</a><br>
+				&copy; 2017-<script>document.write(new Date().getFullYear());</script> Myhouse System by Jeromy Lin, &nbsp;All rights reserved.&nbsp;&nbsp;Prowered by Myhouse System. (R.O.C.)
+			</section>
+  </div>
+</body>
+<script>
+  // created : 2017.8.21
+// author  : Guozhi_Han 
+// Email   : Guozhi_Han@126.com
+
+(function rotate(){
+   var orientation=window.orientation;
+   var pd = null;
+   function createPd(){
+       if(document.getElementById('preventTran') === null){
+            var imgData = 'data:image/png;base64,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';
+            pd = document.createElement('div');
+            pd.setAttribute('id','preventTran');
+            pd.style.position = 'fixed';
+            pd.style.left = '0';
+            pd.style.top = '0';
+            pd.style.width = '100%';
+            pd.style.height = '100%';
+            pd.style.overflow = 'hidden';
+            pd.style.backgroundColor = '#2e2e2e';
+            pd.style.textAlign = 'center';
+            pd.style.zIndex = '99999';
+            document.getElementsByTagName('body')[0].appendChild(pd);
+            var img = document.createElement('img');
+            img.src = imgData;
+            pd.appendChild(img);
+            img.style.margin = '60px auto 30px'
+            var br = document.createElement('br');
+            var p = document.createElement('p');
+            p.style.width = '100%';
+            p.style.height = 'auto';
+            p.style.fontSize = '22px';
+            p.style.color = '#626262';
+            p.style.lineHeight = '34px';
+            p.style.textAlign = 'center';
+            p.innerHTML = '為了良好的檢視效果';
+            p.appendChild(br);
+            p.innerHTML += '請將 手機/平板 直向觀看';
+            pd.appendChild(p);
+        }
+   }
+   if(orientation==90||orientation==-90){
+        if(pd == null && document.getElementById('preventTran') === null) createPd();
+        document.getElementById('preventTran').style.display = 'block';
+   }
+   window.onorientationchange=function(){
+      if(pd == null && document.getElementById('preventTran') == null) createPd();
+      document.getElementById('preventTran').style.display='none';
+      rotate();
+   };
+})();
+</script>
+<div id="refile" style="display:none;"></div>
+<script async>
+{
+	var autoreaa = setInterval(refilea, 60000);
+	function refilea(){
+	var refilec = "/is-ok/A.txt?"+Math.random();
+	$('#refile').load(refilec,function(responseTxt,statusTxt,xhr){
+		if(statusTxt=="success")
+		{
+			var autotmp = $('#refile').html();
+			autotmp = String(autotmp);
+			if (typeof(autoregb)!="string") {var autoregb = autotmp;}
+			//console.log(autoregb);console.log(autotmp);debugger;
+			if (autotmp == autoregb) 
+			{
+				var autoregb = autotmp;debugger;
+				//continue;
+			}
+			else {
+				alert("頁面資料已更新，將重新整理頁面！");//debugger;
+				location.replace(window.location);
+			}
+			if (autoregb==1)
+			{location.reload();}
+			
+		}
+	});
+	}
+}
+</script>
+</html>	
